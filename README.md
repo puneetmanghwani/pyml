@@ -1,2 +1,2 @@
-# starting
-some useful codes
+
+some useful codes regarding various topics.
