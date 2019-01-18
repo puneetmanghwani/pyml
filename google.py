@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 
-#import urllib2
+import requests
+from bs4 import BeautifulSoup
 from googlesearch import search
 
-#parameters 
-#search(query, tld='com', lang='en', num=10, start=0, stop=None, pause=2.0)
-
-data=search('hello',num=10,tld="co.in",stop=10)
+data=search('hello',num=5,tld="co.in",stop=5)
 print (type(data))
 for i in data:
-	print(i)
-	#link=urllib2.urlopen(i)
-	#print(link.read())
+    source = requests.get(i).text
+    soup = BeautifulSoup(source, 'lxml')
+    for p in soup.select('p'):
+        print(p.text)
+    print('___----____--%^%&^@!%$&^%$(!%$&^#@%$*&!+_____------_____#@^*&^$*&@#')
+
+	
+	
