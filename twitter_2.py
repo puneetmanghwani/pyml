@@ -56,28 +56,28 @@ def get_tweets(username):
           #print(data)
           main=main+data
         print(main)
-	'''
-           print(sent_token)
-         print('______^&*$%^$%&*#$^&Q($_______')
-         print(word_token)
+	 
+        #   print(sent_token)
+        # print('______^&*$%^$%&*#$^&Q($_______')
+        # print(word_token)
 	
         #text = nltk.Text(word_token)
 
-         frequency_distribution = nltk.FreqDist(text)
-         print (frequency_distribution.most_common(10))
-         print (frequency_distribution.plot())
-         print(tmp) 
-         for items in tmp1.items(10):
-           print(items.text)
-           print('\n')
-  	'''
+         #frequency_distribution = nltk.FreqDist(text)
+         #print (frequency_distribution.most_common(10))
+         #print (frequency_distribution.plot())
+         #print(tmp) 
+         #for items in tmp1.items(10):
+         #  print(items.text)
+         #  print('\n')
+  	  
 # Driver code 
 if __name__ == '__main__':
 	 
-     '''  
-      Here goes the twitter handle for the user 
-      whose tweets are to be extracted. 
-     data=str(input('enter')) 
-     print(input('enter'))
-     '''
+          
+      #Here goes the twitter handle for the user 
+     # whose tweets are to be extracted. 
+     #data=str(input('enter')) 
+    # print(input('enter'))
+          
     get_tweets(input('enter the username if you want tweets based on it'))
