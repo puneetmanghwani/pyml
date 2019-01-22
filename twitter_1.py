@@ -3,6 +3,7 @@ import tweepy
 import cursor
 import nltk
 import matplotlib.pyplot as plt
+import re
 
 consumer_key="bSh5wvnGDnoE0HShQjbLcDCj5"
 consumer_secret="mwyr7FEk1z54uqhqxRSnHCoEM9QgdNVfEPNofH6gU3VwIbgfcs"
@@ -36,7 +37,7 @@ def get_tweets(username):
   
            
             data=data+j 
-  
+        
         from nltk.tokenize import sent_tokenize
         from nltk.tokenize import word_tokenize
 
@@ -50,7 +51,9 @@ def get_tweets(username):
 
         frequency_distribution = nltk.FreqDist(text)
         print (frequency_distribution.most_common(10))
-        print (frequency_distribution.plot())
+        fig=plt.figure(figsize=(30,30))
+        print (frequency_distribution.plot(20))
+        plt.tight_layout()
       #  print(tmp) 
        # for items in tmp1.items(10):
         #  print(items.text)
