@@ -3,39 +3,25 @@
 import cv2,time
 
 cap=cv2.VideoCapture(0)
+i=0
+while cap.isOpened():
+    #  here status return true or false 
+    # frame is the actual data captured by camera
+    status,frame=cap.read()
+    height,width=frame.shape[:2]
 
+    frame=frame[0:int(height/2),0:int(width/2)]
+    # converting image from color to gray 
+    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    #cv2.imshow('camera0',frame)
+    #cv2.imshow('camera1',gray)
+    cv2.imshow('camera2',frame)
+    #cv2.imshow('camera3',gray)
+    cv2.imwrite('pic/pic{}.jpg'.format(i), frame)
+    i+=1 
+    if cv2.waitKey(1) & 0xFF == ord('q') :
+        
+        break
 
-
-status,frame=cap.read()
-if status:
-	frame = cv2.resize(status, (0, 0), .25, .25)
-
-	gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-
-
-
-	#numpy_vertical = np.vstack((frame, grey))
-	numpy_horizontal = np.hstack((frame,grey))
-
-	#numpy_vertical_concat = np.concatenate((image, grey_3_channel), axis=0)
-	#numpy_horizontal_concat = np.concatenate((image, grey_3_channel), axis=1)
-
-	#cv2.imshow('Main', image)
-	#cv2.imshow('Numpy Vertical', numpy_vertical)
-	cv2.imshow('Numpy Horizontal', numpy_horizontal)
-	#cv2.imshow('Numpy Vertical Concat', numpy_vertical_concat)
-	c#v2.imshow('Numpy Horizontal Concat', numpy_horizontal_concat)
-
-	#cv2.waitKey()
-
-
-
-
-
-
-	#cv2.imshow('camera',frame)
-	  
-	cv2.waitKey(0)
-
-	cap.release()
-	cv2.destroyAllWindows()
+cap.release()
+cv2.destroyAllWindows()
