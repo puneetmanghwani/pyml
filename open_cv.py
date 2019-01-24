@@ -10,12 +10,12 @@ while cap.isOpened():
     status,frame=cap.read()
     height,width=frame.shape[:2]
 
-    frame=frame[0:int(height/2),0:int(width/2)]
+    crop_frame=frame[0:int(height/2),0:int(width/2)]
     # converting image from color to gray 
     gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     #cv2.imshow('camera0',frame)
-    #cv2.imshow('camera1',gray)
-    cv2.imshow('camera2',frame)
+    cv2.imshow('camera1',frame)
+    cv2.imshow('camera2',crop_frame)
     #cv2.imshow('camera3',gray)
     cv2.imwrite('pic/pic{}.jpg'.format(i), frame)
     i+=1 
