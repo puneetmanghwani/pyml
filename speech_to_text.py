@@ -12,3 +12,4 @@ with mic as source:
 	
 print("you said", r.recognize_google(audio))
 
+ 
