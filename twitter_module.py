@@ -33,6 +33,8 @@ def get_tweets_handler():
         for j in tweets_for_csv: 
            
             data=data+j
+            if(len(data.split())>300):
+               break
         
         tweets_editing(data)
         
@@ -61,6 +63,9 @@ def get_tweets_topic():
 
     for items in topic.items(50):
         data=data+items.text
+        if(len(data.split())>300):
+               break
+    print(data)
 
     tweets_editing(data)
 

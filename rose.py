@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 from bs4 import BeautifulSoup
 import requests
 import csv
@@ -15,7 +15,10 @@ soup = BeautifulSoup(source, 'lxml')
 data=""
 for p in soup.select('p'):
   data=data+p.text
+  if len(data.split())>300:
+     break
   
+print(data)  
 
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
@@ -23,11 +26,11 @@ from nltk.tokenize import word_tokenize
 sent_token = sent_tokenize(data)
 word_token = word_tokenize(data)
 
-print(sent_token)
+#print(sent_token)
 
-print("_______________&**************(^&*!^(*!&(*@!&#!@*#(@!&#()@!&#(*&@!#(@!________________")
+#print("_______________&**************(^&*!^(*!&(*@!&#!@*#(@!&#()@!&#(*&@!#(@!________________")
 
-print(word_token)
+#print(word_token)
 
 
 
