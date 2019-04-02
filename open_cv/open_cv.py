@@ -17,7 +17,7 @@ while cap.isOpened():
     cv2.imshow('camera1',frame)
     cv2.imshow('camera2',crop_frame)
     #cv2.imshow('camera3',gray)
-    cv2.imwrite('pic/pic{}.jpg'.format(i), frame)
+    cv2.imwrite('pic{}.jpg'.format(i), frame)
     i+=1 
     if cv2.waitKey(1) & 0xFF == ord('q') :
         
